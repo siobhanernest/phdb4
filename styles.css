@@ -4,16 +4,24 @@ body {
     font-family: Lato, Arial, sans-serif;
     font-size: 1em;
 }
+
 main {
     max-width: 50%;
 }
+
 h1 {
     font-weight: bold;
     font-size: 1.3em;
 }
+
+h2 {
+    font-size: 1.1em;
+}
+
 p {
     margin: 10px;
 }
+
 label {
     display: inline-block;
     width: 130px;
@@ -21,6 +29,7 @@ label {
     padding: 2px;
     margin: 5px;
 }
+
 input[type=button],
 input[type=submit] {
     background-color: #3f6844;
@@ -73,7 +82,9 @@ li {
 li::marker {
     color: #5daa68;
 }
-.spacer{
+
+.spacer {
+    height: 25px;
 }
 
 .success {
@@ -104,4 +115,24 @@ li::marker {
     margin-bottom: 10px;
     color: #3f6844;
     font-weight: bold;
+}
+
+.required {
+    color: rgb(255,0,0);
+    font-weight: bold;
+}
+
+div a {
+    background-color: #3f6844;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    padding: 10px 15px 10px 15px;
+    text-decoration: none;
+    margin: 1em 1em 0 0;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 75px;
 }
