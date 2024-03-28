@@ -10,9 +10,15 @@ session_start();
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div style="max-width: 400px; text-align: center;">
+<main style="max-width: 400px; text-align: center;">
     <h1>Welcome to the Autos Page</h1>
+    <?php
+        if (isset($_SESSION['message'])) {
+            echo('<p class="message">' . $_SESSION['message'] . "</p>\n");
+            unset($_SESSION['message']) ;
+        }
+    ?>
     <p><a href="login.php">Please Log In</a></p>
-</div>
+</main>
 </body>
 </html>
