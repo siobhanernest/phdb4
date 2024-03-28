@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Check if the user is logged in
-    if (isset($_SESSION['who'])) {
+    if (isset($_SESSION['email'])) {
         // Unset all session variables
         $_SESSION = array();
 

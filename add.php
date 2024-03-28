@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Demand a SESSION parameter
-    if (!isset($_SESSION['who']) || strlen($_SESSION['who']) < 1) {
+    if (!isset($_SESSION['email']) || strlen($_SESSION['email']) < 1) {
         die('Name parameter missing');
     }
     require_once "pdo.php";
@@ -79,9 +79,9 @@
 <body>
 <header>
     <?php
-        if (isset($_SESSION['who'])) {
+        if (isset($_SESSION['email'])) {
             echo "<h1>Tracking Autos for: ";
-            echo htmlentities($_SESSION['who']);
+            echo htmlentities($_SESSION['email']);
             echo "</h1>\n";
         }
         if (isset($_SESSION['error'])) {

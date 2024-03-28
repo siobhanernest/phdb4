@@ -21,9 +21,9 @@ session_start();
 <body>
 <header>
     <?php
-        if (isset($_SESSION['who'])) {
+        if (isset($_SESSION['email'])) {
             echo "<h1>Tracking Autos for: ";
-            echo htmlentities($_SESSION['who']);
+            echo htmlentities($_SESSION['email']);
             echo "</h1>\n";
         }
         if (isset($_SESSION['success'])) {

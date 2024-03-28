@@ -69,8 +69,8 @@
     }
 ?>
 <form method="post">
-    <label for="who">User Email:</label>
-    <input type="text" name="who" id="who"><br/>
+    <label for="email">User Email:</label>
+    <input type="text" name="email" id="email"><br/>
     <label for="id_1723">Password</label>
     <input type="password" name="pass" id="id_1723"><br/>
     <input type="submit" value="Log In">
