@@ -46,13 +46,21 @@
         && isset($_POST['year'])) {
         if (empty($_POST['make'])) {
             $_SESSION['error'] = "Make is required";
+            header("Location: add.php") ;
+            return;
         } else {
             if (!is_numeric($_POST['mileage']) || !is_numeric($_POST['year'])) {
                 $_SESSION['error'] = "Mileage and year must be numeric";
+                header("Location: add.php") ;
+                return;
             } else if (!empty($_POST['url']) && !filter_var(filter_var($_POST['url'], FILTER_SANITIZE_URL), FILTER_VALIDATE_URL)) {
                 $_SESSION['error'] = "URL must begin with http:// or https://";
+                header("Location: add.php") ;
+                return;
             } else if (!empty($_POST['url']) && !urlExists(filter_var($_POST['url'], FILTER_SANITIZE_URL))) {
                 $_SESSION['error'] = "The URL is not valid";
+                header("Location: add.php") ;
+                return;
             } else {
                 $sql = "INSERT INTO autos (make, mileage, year, url) 
               VALUES (:make, :mileage, :year, :url)";
