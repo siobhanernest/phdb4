@@ -51,7 +51,7 @@ session_start();
         }
     ?>
     <div class="spacer"></div>
-    <div class="buttons"><a href="add.php">Add New</a><a href="logout.php">Log out</a> </div>
+    <div class="buttons"><a href="add.php">Add New</a><a href="logout.php">Logout</a> </div>
 </main>
 <footer>
 
