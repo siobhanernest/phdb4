@@ -14,13 +14,13 @@
     $salt = 'XyZzy12*_';
     $stored_hash = '1a52e17fa899cf40fb04cfc42e6352f1'; //pw: php123
 
-    if (isset($_POST['who']) && isset($_POST['pass'])) {
-        unset($_SESSION['who']);
-        if (strlen($_POST['who']) < 1 || strlen($_POST['pass']) < 1) {
+    if (isset($_POST['email']) && isset($_POST['pass'])) {
+        unset($_SESSION['email']);
+        if (strlen($_POST['email']) < 1 || strlen($_POST['pass']) < 1) {
             $_SESSION['error'] = "User name and password are required";
             header("Location: login.php");
             return;
-        } else if (!strpbrk($_POST['who'], '@')) {
+        } else if (!strpbrk($_POST['email'], '@')) {
             $_SESSION['error'] = "Email must have an at-sign (@)";
             header("Location: login.php");
             return;
@@ -28,16 +28,16 @@
             $check = hash('md5', $salt . $_POST['pass']);
             if ($check == $stored_hash) {
                 // Redirect the browser to view.php
-                $_SESSION['who'] = $_POST['who'];
+                $_SESSION['email'] = $_POST['email'];
                 $_SESSION['success'] = "Login success";
                 header("Location: view.php");
-                error_log("Login success " . $_SESSION['who']);
+                error_log("Login success " . $_SESSION['email']);
                 return;
             } else {
-                error_log("Login fail " . $_POST['who'] . " $check");
+                error_log("Login fail " . $_POST['email'] . " $check");
                 $_SESSION['error'] = "Incorrect password";
                 header("Location: login.php");
-                error_log("Login fail " . $_POST['who']);
+                error_log("Login fail " . $_POST['email']);
                 return;
             }
         }

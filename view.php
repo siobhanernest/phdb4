@@ -2,7 +2,7 @@
 session_start();
 
 // Demand a SESSION parameter
-    if (!isset($_SESSION['who']) || strlen($_SESSION['who']) < 1) {
+    if (!isset($_SESSION['email']) || strlen($_SESSION['email']) < 1) {
         die('Name parameter missing');
     }
     require_once "pdo.php";
